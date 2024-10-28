@@ -1,0 +1,447 @@
+
+:root {
+    /* Light mode variables */
+    --background-color: #ffffff; /* Light mode background */
+    --text-color: #333333; /* Light mode text color */
+    --link-color: #007bff; /* Light mode link color */
+
+    /* Dark mode variables */
+    --background-color-dark: #121212; /* Dark mode background */
+    --text-color-dark: #e0e0e0; /* Dark mode text color */
+    --link-color-dark: #bb86fc; /* Dark mode link color */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+    }
+    to {
+        opacity: 1; /* End fully opaque */
+    }
+}
+
+/* Default light mode styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    color: blue;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode a {
+    color: var(--link-color-dark);
+}
+
+
+
+
+
+.sticky-header {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0; /* Stick to the top */
+    background-color: white; /* Background color */
+    z-index: 1000; /* Make sure it stays on top */
+    padding: 5px; /* Add some padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    font-size: 1em; /* Adjust the font size */
+    color: #0073e6; /* Change to your desired color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make it bold for emphasis */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+    animation: fadeIn 1s ease-in; /* Apply fade-in animation */
+}
+.sticky-header:hover {
+    color: #005bb5; /* Darker shade on hover */
+}
+/* Dark mode styles */
+body.dark-mode .sticky-header {
+    background-color: black; /* Dark mode background */
+    color: var(--text-color-dark); /* Dark mode text color */
+}
+
+
+
+
+
+
+
+
+/* Date Styling */
+h1 + h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333; /* Black color */
+    display: block;
+    text-align: center;
+    margin: 0 auto 20px auto; /* Centered with space below */
+   
+}
+
+body.dark-mode h1 + h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #dad6d6; /* Black color */
+    display: block;
+    text-align: center;
+    margin: 0 auto 20px auto; /* Centered with space below */
+   
+}
+/* Base Race Summary Styling */
+.summary p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 0; /* Override margin-block-start */
+    margin-bottom: 16px; /* Set custom spacing between paragraphs */
+    text-align: justify;
+}
+
+body.dark-mode .summary p{
+    font-size: 0.9em;
+    color: #d4d2d2;
+    line-height: 1.5;
+    margin-top: 0; /* Override margin-block-start */
+    margin-bottom: 16px; /* Set custom spacing between paragraphs */
+    text-align: justify;
+}
+
+
+.summary-content {
+    max-height: 60px; /* Adjust to show only the first few lines */
+    overflow: hidden; /* Hide the overflow */
+    transition: max-height 0.3s ease; /* Smooth transition */
+}
+
+.summary-content.expanded {
+    max-height: 300px; /* Increase height for full text */
+}
+
+#read-more {
+    color: #041f3b; /* Link color */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: underline; /* Underline for emphasis */
+}
+
+body.dark-mode #read-more {
+    color: #bb86fc; /* Adjust link color for dark mode */
+}
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+h2, h3 {
+    color: #555;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.6em;
+    color: #333;
+}
+body.dark-mode h2{
+    font-size: 1.6em;
+    color: #e9e7e7;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #666;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    margin: 5px 0;
+}
+
+nav ul li a {
+    color: #072747;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+/* Dark mode styles for tables */
+body.dark-mode table {
+    border-collapse: collapse; /* Keep the collapse for dark mode */
+}
+
+body.dark-mode th, body.dark-mode td {
+    background-color: #121212; /* Dark background for header and cells */
+    color: #e0e0e0; /* Light text color for better visibility */
+    padding: 10px;
+    border: 1px solid #ffffff; /* White border for dark mode */
+}
+
+/* Even row styles for dark mode */
+body.dark-mode tr:nth-child(even) {
+    background-color: #a79d9d; /* Darker gray for even rows */
+}
+
+
+
+th {
+    position: sticky;       /* Makes the header row stick on scroll */
+    top: 0;
+    background-color: #fff; /* Background color for visibility */
+    z-index: 1;             /* Ensures header stays above content */
+}
+
+/* Back to Homepage Link Styling */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #082164;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #0073e6;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #0073e6;
+    color: #fff;
+}
+/* Add scroll-margin-top to sections */
+#summary {
+    scroll-margin-top: 250px; /* Adjust based on your sticky header height */
+}
+
+#team-results {
+    scroll-margin-top: 250px; /* Adjust based on your sticky header height */
+}
+
+#individual-results {
+    scroll-margin-top: 250px; /* Adjust based on your sticky header height */
+}
+
+#gallery {
+    scroll-margin-top: 250px;
+}
+
+span.athlete {
+    font-weight: bold; /* Make the names bold */
+    color: black; /* Set a blue color for light mode */
+    padding: 0;
+    box-shadow:none;
+    background-color: transparent;
+}
+
+.athlete {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center;
+    margin: 10px auto; /* Centered for narrow screens */
+    width: 90%; /* Takes up 90% of the screen width on mobile */
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.athlete:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+body.dark-mode .athlete {
+    background-color: rgb(52, 49, 49);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(225, 218, 218, 0.1); /* Soft shadow */
+    text-align: center;
+    margin: 10px auto; /* Centered for narrow screens */
+    width: 90%; /* Takes up 90% of the screen width on mobile */
+}
+
+
+/* Dark mode styles for athlete names */
+body.dark-mode span.athlete {
+    font-weight: bold; /* Make the names bold */
+    color: white; /* Set a blue color for light mode */
+    padding: 0;
+    box-shadow:none;
+    background-color: transparent;
+}
+
+.athlete img {
+    display: block; /* Change to block to allow margin auto to work */
+    margin: 0 auto; /* Center the image */
+    width: 150px; /* Set the desired width */
+    height: 150px; /* Set the same height for a perfect circle */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    border: 3px solid #fff; /* Optional: white border around the image */
+}
+
+
+
+.athlete-name {
+    cursor: pointer; /* Show pointer cursor on hover */
+    color: #0073e6; /* Change color to indicate it's clickable */
+    text-decoration: underline; /* Underline for emphasis */
+}
+
+.athlete-name:hover {
+    color: #7700b3; /* Darker color on hover */
+}
+
+body.dark-mode .athlete-name{
+    color: white;
+}
+
+body.dark-mode .athlete-name:hover{
+    color: rgb(0, 255, 229);
+}
+
+.athlete:active .additional-info {
+    display: block; /* Show when tapped */
+}
+
+.athlete figcaption {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+
+
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+dt, dd {
+    width: 45%; /* Pairs of dt and dd will take up half the width each */
+    text-align: left;
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+dt {
+    font-weight: bold;
+    color: #333;
+}
+
+dd {
+    font-weight: normal;
+}
+
+body.dark-mode dt{
+    font-weight: bold;
+    color: #f4f4f4;
+}
+
+body.dark-mode dd{
+    color: white;
+}
+.collapsible {
+    margin-bottom: 20px; /* Space below each collapsible section */
+    border: 1px solid #ddd; /* Border around collapsible section */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.collapsible-btn {
+    background-color: #0073e6; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px; /* Space within button */
+    text-align: left; /* Align text to left */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 1em; /* Font size */
+    width: 100%; /* Full width */
+}
+
+.collapsible-content {
+    display: none; /* Hidden by default */
+    padding: 15px; /* Space inside collapsible content */
+    background-color: #f9f9f9; /* Light background */
+    border-top: 1px solid #ddd; /* Top border */
+}
+
+/* Prefers-reduced-motion styles */
+@media (prefers-reduced-motion: reduce) {
+    .sticky-header {
+        animation: none; /* Disable animations for the sticky header */
+    }
+
+    .athlete {
+        transition: none; /* Disable transitions for athlete cards */
+    }
+}
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap onto the next line */
+    gap: 10px; /* Space between images */
+}
+
+
+
+.gallery-image {
+    width: 100%; /* Adjust width as needed */
+    max-width: 200px; /* Set a max-width for each image */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: transform 0.3s; /* Optional: animation on hover */
+}
+
+.gallery-image:hover {
+    transform: scale(1.05); /* Optional: scale up on hover */
+}
+
+
+
+
+
+
+
